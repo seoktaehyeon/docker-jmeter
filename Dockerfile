@@ -8,7 +8,7 @@ ADD https://github.com/apache/jmeter/archive/v5_0.tar.gz /opt/jmeter/jmeter.tgz
 RUN cd /opt/jmeter && \
     tar zvxf jmeter.tgz && \
     rm -rf jmeter.tgz && \
-    jmeter_root_dir=$(ls)
+    jmeter_root_dir=$(ls) && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter /usr/local/bin/jmeter && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter-server /usr/local/bin/jmeter-server && \
     echo '' >> /opt/jmeter/${jmeter_root_dir}/bin/jmeter.properties && \
