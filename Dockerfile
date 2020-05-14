@@ -5,7 +5,7 @@ LABEL maintainer="v.stone@163.com" \
       website="https://jmeter.apache.org" \
       history="https://archive.apache.org/dist/jmeter/binaries"
 
-ADD https://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip /opt/jmeter/
+ADD ./jmeter.tgz /opt/jmeter/
 
 RUN cd /opt/jmeter && \
     jmeter_root_dir=$(ls) && \
