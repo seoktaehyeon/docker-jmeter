@@ -4,7 +4,7 @@ LABEL maintainer="v.stone@163.com" \
       github="https://github.com/apache/jmeter" \
       website="https://jmeter.apache.org"
 
-ADD http://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-5.0.tgz /opt/jmeter/
+ADD https://github.com/apache/jmeter/archive/v5_0.tar.gz /opt/jmeter/
 
 RUN cd /opt/jmeter && \
     jmeter_root_dir=$(ls) && \
