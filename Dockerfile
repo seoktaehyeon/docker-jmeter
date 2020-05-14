@@ -8,8 +8,6 @@ LABEL maintainer="v.stone@163.com" \
 ADD https://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip /opt/jmeter/
 
 RUN cd /opt/jmeter && \
-    tar zvxf jmeter.tar.gz && \
-    rm -rf jmeter.tar.gz && \
     jmeter_root_dir=$(ls) && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter /usr/local/bin/jmeter && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter-server /usr/local/bin/jmeter-server && \
