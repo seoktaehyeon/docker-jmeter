@@ -2,7 +2,8 @@ FROM java:8-jre-alpine
 LABEL maintainer="v.stone@163.com" \
       organization="Truth & Insurance Office" \
       github="https://github.com/apache/jmeter" \
-      website="https://jmeter.apache.org"
+      website="https://jmeter.apache.org" \
+      history="https://archive.apache.org/dist/jmeter/binaries"
 
 ADD https://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip /opt/jmeter/
 
