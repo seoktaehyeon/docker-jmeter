@@ -1,13 +1,12 @@
 FROM java:8-jre-alpine
 LABEL maintainer="v.stone@163.com" \
       organization="Truth & Insurance Office" \
-      github="https://github.com/apache/jmeter"
+      github="https://github.com/apache/jmeter" \
+      website="https://jmeter.apache.org"
 
-ADD https://github.com/apache/jmeter/archive/v5_0.tar.gz /opt/jmeter/jmeter.tgz
+ADD http://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-5.0.tgz /opt/jmeter/
 
 RUN cd /opt/jmeter && \
-    tar zvxf jmeter.tgz && \
-    rm -rf jmeter.tgz && \
     jmeter_root_dir=$(ls) && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter /usr/local/bin/jmeter && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter-server /usr/local/bin/jmeter-server && \
