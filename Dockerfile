@@ -4,9 +4,11 @@ LABEL maintainer="v.stone@163.com" \
       github="https://github.com/apache/jmeter" \
       website="https://jmeter.apache.org"
 
-ADD https://github.com/apache/jmeter/archive/v5_0.tar.gz /opt/jmeter/
+ADD https://github.com/apache/jmeter/archive/v5_0.tar.gz /opt/jmeter/jmeter.tar.gz
 
 RUN cd /opt/jmeter && \
+    tar zvxf jmeter.tar.gz && \
+    rm -rf jmeter.tar.gz && \
     jmeter_root_dir=$(ls) && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter /usr/local/bin/jmeter && \
     ln -s /opt/jmeter/${jmeter_root_dir}/bin/jmeter-server /usr/local/bin/jmeter-server && \
